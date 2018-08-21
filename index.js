@@ -7,7 +7,7 @@ var gutil = require('gulp-util'),
 	defaults = {
 		versionRegex: function (extensions) {
 			var exts = extensions.join('|'),
-				regexString = "(\\.(?:" + exts + ")\\?v=)(\\@version\\@)";
+				regexString = "(\\.(?:" + exts + ")\\?rev=)(\\@version\\@)";
 			return new RegExp(regexString, 'ig');
 		}
 	},
