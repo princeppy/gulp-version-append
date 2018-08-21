@@ -64,7 +64,7 @@ var gutil = require('gulp-util'),
 				pJson = appRoot.require('package.json');
 				version = pJson && pJson.version;
 			}
-			file.contents = new Buffer(file.contents.toString().replace(defaults.versionRegex(extensions), '$1' + version));
+			file.contents = new Buffer(file.contents.toString().replace(defaults.versionRegex(extensions), '$1' + version.replace(/[^a-zA-Z0-9]/g,'')));
 			cb(null, file);
 		});
 	};
